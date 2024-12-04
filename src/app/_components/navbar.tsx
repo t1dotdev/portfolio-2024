@@ -3,92 +3,148 @@ import React from "react";
 import {
   Navbar,
   NavbarBrand,
+  NavbarMenuToggle,
+  NavbarMenuItem,
+  NavbarMenu,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
   Link,
   Button,
 } from "@nextui-org/react";
-import Ascii from "./ascii";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { ThemeSwitcher } from "./theme-switcher";
+// import { TbBrandGithub } from "react-icons/tb";
 
-export default function Nav() {
+export default function Nav({ index }: { index: string }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const { theme } = useTheme();
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      maxWidth="xl"
+      className="fixed p-2"
+      // shouldHideOnScroll
+    >
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
-        <NavbarBrand>
-          {/* <AcmeLogo /> */}
-
-          <p className="font-bold text-inherit">TOPONE.DEV</p>
-        </NavbarBrand>
+        <NavbarBrand>{/* <Logo /> */}</NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-4 sm:flex" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+      <NavbarContent className="hidden gap-6 md:flex" justify="center">
+        <NavbarItem isActive={index === "home"}>
+          <Link
+            color={index === "home" ? "primary" : "foreground"}
+            href="/"
+            className="cursor-pointer hover:text-primary"
+          >
+            Home
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+        <NavbarItem isActive={index === "about"}>
+          <Link
+            color={index === "about" ? "primary" : "foreground"}
+            href="/about"
+            className="cursor-pointer hover:text-primary"
+          >
+            About
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+        <NavbarItem isActive={index === "projects"}>
+          <Link
+            color={index === "projects" ? "primary" : "foreground"}
+            href="/projects"
+            className="cursor-pointer hover:text-primary"
+          >
+            Projects
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={index === "services"}>
+          <Link
+            color={index === "services" ? "primary" : "foreground"}
+            href="/services"
+            className="cursor-pointer hover:text-primary"
+          >
+            Services
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive={index === "contact"}>
+          <Link
+            color={index === "contact" ? "primary" : "foreground"}
+            href="/contact"
+            className="cursor-pointer hover:text-primary"
+          >
+            Contact
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+      <NavbarContent className="gap-2" justify="end">
+        <NavbarItem className="">
+          <ThemeSwitcher />
         </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+        <NavbarItem className="flex md:hidden">
+          <Button
+            as={Link}
+            variant="flat"
+            color="primary"
+            href="https://github.com/petchxx"
+            isIconOnly
+          >
+            {/* <TbBrandGithub size={20} /> */}
+          </Button>
+        </NavbarItem>
+        <NavbarItem className="hidden md:flex">
+          <Button
+            as={Link}
+            href="https://github.com/petchxx"
+            color="primary"
+            variant="flat"
+          >
+            {/* <TbBrandGithub size={20} /> */}
+            <p>Petchxx</p>
           </Button>
         </NavbarItem>
       </NavbarContent>
+      <NavbarMenuToggle
+        aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        className="md:hidden"
+      />
       <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem>
+          <Link
+            color={index === "home" ? "primary" : "foreground"}
+            className="w-full"
+            href="/"
+            size="lg"
+          >
+            Home
+          </Link>
+          <Link
+            color={index === "about" ? "primary" : "foreground"}
+            className="w-full"
+            href="/about"
+            size="lg"
+          >
+            About
+          </Link>
+          <Link
+            color={index === "projects" ? "primary" : "foreground"}
+            className="w-full"
+            href="/projects"
+            size="lg"
+          >
+            Projects
+          </Link>
+          <Link
+            color={index === "contact" ? "primary" : "foreground"}
+            className="w-full"
+            href="/contact"
+            size="lg"
+          >
+            Contact
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );

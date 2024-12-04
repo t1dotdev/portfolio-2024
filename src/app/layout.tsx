@@ -22,7 +22,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${font.className}`}>
+    <html suppressHydrationWarning lang="en" className={`${font.className}`}>
       <body>
         <TRPCReactProvider>
           <Providers>{children}</Providers>
