@@ -30,7 +30,12 @@ export default {
         },
         dark: {
           layout: {}, // dark theme layout tokens
-          colors: {}, // dark theme colors
+          colors: {
+            primary: {
+              DEFAULT: "#905aff",
+              foreground: "#fff",
+            },
+          }, // light theme colors
         },
       },
     }),

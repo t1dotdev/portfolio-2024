@@ -15,7 +15,8 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./theme-switcher";
-// import { TbBrandGithub } from "react-icons/tb";
+import Ascii from "./ascii";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Nav({ index }: { index: string }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -29,7 +30,10 @@ export default function Nav({ index }: { index: string }) {
       // shouldHideOnScroll
     >
       <NavbarContent>
-        <NavbarBrand>{/* <Logo /> */}</NavbarBrand>
+        <NavbarBrand>
+          {/* <Logo /> */}
+          <div className="text-lg font-black">TOPONE.DEV</div>
+        </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden gap-6 md:flex" justify="center">
@@ -92,17 +96,20 @@ export default function Nav({ index }: { index: string }) {
             isIconOnly
           >
             {/* <TbBrandGithub size={20} /> */}
+
+            <Icon icon="line-md:github-loop" fontSize={20} />
           </Button>
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
             as={Link}
-            href="https://github.com/petchxx"
+            href="https://github.com/t1dotdev"
             color="primary"
             variant="flat"
           >
             {/* <TbBrandGithub size={20} /> */}
-            <p>Petchxx</p>
+            <Icon icon="line-md:github-loop" fontSize={20} />
+            <p>T1DOTDEV</p>
           </Button>
         </NavbarItem>
       </NavbarContent>

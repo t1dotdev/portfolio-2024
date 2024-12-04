@@ -474,7 +474,7 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div
-          className="0 order-7 col-span-2 h-80"
+          className="0 order-7 col-span-1 h-80"
           variants={fadeIn}
           initial="init"
           animate="end"
@@ -504,7 +504,67 @@ export default function HomePage() {
           </div>
         </motion.div>
         <motion.div
-          className="order-8 col-span-2 h-80"
+          className="order-8 col-span-1 h-80"
+          variants={fadeIn}
+          initial="init"
+          animate="end"
+          onClick={() => router.push("https://boostagram.dev")}
+        >
+          <div className="group relative h-full cursor-pointer">
+            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
+            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#006fee] group-hover:flex">
+              Boostagram
+            </h1>
+            <Card className="group h-full items-center justify-center rounded-3xl p-2">
+              <CardBody className="items-center justify-center">
+                <Image
+                  src="/assets/boostagram-light.png"
+                  className="pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+                <Image
+                  src="/assets/boostagram-dark.png"
+                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </motion.div>
+        <motion.div
+          className="order-9 col-span-1 h-80"
+          variants={fadeIn}
+          initial="init"
+          animate="end"
+          onClick={() => router.push("https://boostagram.dev")}
+        >
+          <div className="group relative h-full cursor-pointer">
+            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
+            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#006fee] group-hover:flex">
+              Boostagram
+            </h1>
+            <Card className="group h-full items-center justify-center rounded-3xl p-2">
+              <CardBody className="items-center justify-center">
+                <Image
+                  src="/assets/boostagram-light.png"
+                  className="pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+                <Image
+                  src="/assets/boostagram-dark.png"
+                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </motion.div>
+        <motion.div
+          className="order-10 col-span-1 h-80"
           variants={fadeIn}
           initial="init"
           animate="end"
