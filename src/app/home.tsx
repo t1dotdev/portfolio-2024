@@ -535,7 +535,7 @@ export default function HomePage() {
           variants={fadeIn}
           initial="init"
           animate="end"
-          onClick={() => router.push("https://getclockin.app")}
+          onClick={() => router.push("https://b3loved-s.web.app/")}
         >
           <div className="group relative h-full cursor-pointer">
             <Card className="group h-full rounded-3xl">
