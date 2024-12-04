@@ -71,7 +71,7 @@ export function ThemeSwitcher({ size, isSwitch }: Props) {
           onClick={() => setTheme("dark")}
         >
           <Icon
-            icon="line-md:moon-rising-loop"
+            icon="line-md:moon-loop"
             className="text-foreground"
             fontSize={24}
           />

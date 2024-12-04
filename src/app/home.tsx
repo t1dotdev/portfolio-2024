@@ -13,6 +13,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import Nav from "./_components/navbar";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { ThemeSwitcher } from "./_components/theme-switcher";
 
 export default function HomePage() {
   const router = useRouter();
@@ -182,17 +184,20 @@ export default function HomePage() {
                         {/* /> */}
                         {imageHover ? (
                           <div className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-3xl bg-content1 shadow-medium">
-                            <Image
-                              src={"/assets/logo.svg"}
-                              // src={"/assets/petchx.png"}
-
-                              className="pointer-events-none scale-x-[-1] ring-offset-default-foreground"
-                              alt="Petchx Panuphong Burakitphachai"
-                              width={126}
-                              height={126}
-                              onLoad={() => setImageLoaded(true)}
-                              onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
-                            />
+                            <div className="scale-x-[-1] text-6xl font-black">
+                              T1
+                            </div>
+                            {/* <Image */}
+                            {/*   src={"/assets/logo.svg"} */}
+                            {/*   // src={"/assets/petchx.png"} */}
+                            {/**/}
+                            {/*   className="pointer-events-none scale-x-[-1] ring-offset-default-foreground" */}
+                            {/*   alt="Petchx Panuphong Burakitphachai" */}
+                            {/*   width={126} */}
+                            {/*   height={126} */}
+                            {/*   onLoad={() => setImageLoaded(true)} */}
+                            {/*   onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true */}
+                            {/* /> */}
                           </div>
                         ) : (
                           <Image
@@ -333,6 +338,17 @@ export default function HomePage() {
                     {/*   height={126} */}
                     {/*   alt="Petchx Panuphong Burakitphachai" */}
                     {/* /> */}
+                    <Image
+                      src={"/assets/logo.svg"}
+                      // src={"/assets/petchx.png"}
+
+                      className="pointer-events-none scale-x-[-1] ring-offset-default-foreground"
+                      alt="Petchx Panuphong Burakitphachai"
+                      width={126}
+                      height={126}
+                      onLoad={() => setImageLoaded(true)}
+                      onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
+                    />
                   </motion.div>
                   <CardFooter className="flex-col items-start justify-start">
                     <h1 className="text-xs opacity-50">บริการ</h1>
@@ -364,7 +380,7 @@ export default function HomePage() {
                       whileHover={zoomIn}
                     >
                       <div className="cursor-pointer rounded-full bg-content1 p-4 text-primary hover:bg-black hover:text-white">
-                        {/* <Icon icon="line-md:github-loop" fontSize={32} /> */}
+                        <Icon icon="line-md:github-loop" fontSize={32} />
                       </div>
                     </motion.div>
                     <motion.div
@@ -378,7 +394,7 @@ export default function HomePage() {
                         // className="cursor-pointer bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
                         className="cursor-pointer rounded-full bg-content1 p-4 hover:bg-gradient-to-r hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white"
                       >
-                        {/* <Icon icon="line-md:instagram" fontSize={32} /> */}
+                        <Icon icon="line-md:instagram" fontSize={32} />
                       </motion.div>
                     </motion.div>
                     <motion.div
@@ -395,7 +411,7 @@ export default function HomePage() {
                         // className="p-4 bg-content1 rounded-full cursor-pointer"
                         className="cursor-pointer rounded-full bg-content1 p-4 hover:bg-blue-500 hover:text-white"
                       >
-                        {/* <Icon icon="line-md:facebook" fontSize={32} /> */}
+                        <Icon icon="line-md:facebook" fontSize={32} />
                       </div>
                     </motion.div>
                     <motion.div
@@ -409,7 +425,7 @@ export default function HomePage() {
                         // className="cursor-pointer rounded-full bg-[#06c755] p-4 text-white"
                         className="cursor-pointer rounded-full bg-content1 p-4 hover:bg-[#06c755] hover:text-white"
                       >
-                        {/* <Icon icon="ri:line-fill" fontSize={32} /> */}
+                        <Icon icon="ri:line-fill" fontSize={32} />
                       </div>
                     </motion.div>
                   </div>
@@ -442,7 +458,7 @@ export default function HomePage() {
               <CardBody className="items-center justify-center">
                 <div className="x-2 w-full">
                   <div className="flex h-28 items-center justify-center gap-4 rounded-3xl bg-secondary text-primary">
-                    {/* <ThemeSwitcher isSwitch={true} /> */}
+                    <ThemeSwitcher isSwitch={true} />
                     {/* <div */}
                     {/*   className="rounded-full bg-content1 p-5 hover:text-foreground" */}
                     {/*   onClick={(e) => { */}
@@ -474,122 +490,83 @@ export default function HomePage() {
         </motion.div>
 
         <motion.div
-          className="0 order-7 col-span-1 h-80"
+          className="order-7 col-span-1"
           variants={fadeIn}
           initial="init"
           animate="end"
           onClick={() => router.push("https://getclockin.app")}
         >
           <div className="group relative h-full cursor-pointer">
-            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
-            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#f5a524] group-hover:flex">
-              ClockIn
-            </h1>
-            <Card className="group h-full items-center justify-center rounded-3xl p-2">
-              <CardBody className="items-center justify-center overflow-hidden">
+            <Card className="group h-full rounded-3xl">
+              <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/clockin-light.png"
-                  className="roun pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
+                  src="/assets/clockin.png"
+                  className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
+                  alt="Topone Panuphong Burakitphachai"
                 />
-                <Image
-                  src="/assets/clockin-dark.png"
-                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
-                  fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
-                />
-              </CardBody>
+              </div>
             </Card>
           </div>
         </motion.div>
         <motion.div
-          className="order-8 col-span-1 h-80"
+          className="order-7 col-span-1"
           variants={fadeIn}
           initial="init"
           animate="end"
-          onClick={() => router.push("https://boostagram.dev")}
+          onClick={() => router.push("https://kalayanamit.com")}
         >
           <div className="group relative h-full cursor-pointer">
-            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
-            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#006fee] group-hover:flex">
-              Boostagram
-            </h1>
-            <Card className="group h-full items-center justify-center rounded-3xl p-2">
-              <CardBody className="items-center justify-center">
+            <Card className="group h-full rounded-3xl">
+              <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/boostagram-light.png"
-                  className="pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
+                  src="/assets/kalayanamit.png"
+                  className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
+                  alt="Topone Panuphong Burakitphachai"
                 />
+              </div>
+            </Card>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="order-7 col-span-1"
+          variants={fadeIn}
+          initial="init"
+          animate="end"
+          onClick={() => router.push("https://getclockin.app")}
+        >
+          <div className="group relative h-full cursor-pointer">
+            <Card className="group h-full rounded-3xl">
+              <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/boostagram-dark.png"
-                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
+                  src="/assets/b3loved.png"
+                  className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
+                  alt="Topone Panuphong Burakitphachai"
                 />
-              </CardBody>
+              </div>
             </Card>
           </div>
         </motion.div>
         <motion.div
-          className="order-9 col-span-1 h-80"
+          className="order-7 col-span-1"
           variants={fadeIn}
           initial="init"
           animate="end"
-          onClick={() => router.push("https://boostagram.dev")}
+          onClick={() => router.push("https://boostagram.app")}
         >
           <div className="group relative h-full cursor-pointer">
-            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
-            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#006fee] group-hover:flex">
-              Boostagram
-            </h1>
-            <Card className="group h-full items-center justify-center rounded-3xl p-2">
-              <CardBody className="items-center justify-center">
+            <Card className="group h-full rounded-3xl">
+              <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/boostagram-light.png"
-                  className="pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
+                  src="/assets/boostagram.png"
+                  className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
+                  alt="Topone Panuphong Burakitphachai"
                 />
-                <Image
-                  src="/assets/boostagram-dark.png"
-                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
-                  fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
-                />
-              </CardBody>
-            </Card>
-          </div>
-        </motion.div>
-        <motion.div
-          className="order-10 col-span-1 h-80"
-          variants={fadeIn}
-          initial="init"
-          animate="end"
-          onClick={() => router.push("https://boostagram.dev")}
-        >
-          <div className="group relative h-full cursor-pointer">
-            <div className="absolute z-10 hidden h-full w-full rounded-3xl bg-background/20 backdrop-blur-sm group-hover:block"></div>
-            <h1 className="absolute z-10 hidden h-full w-full items-center justify-center text-6xl font-bold text-[#006fee] group-hover:flex">
-              Boostagram
-            </h1>
-            <Card className="group h-full items-center justify-center rounded-3xl p-2">
-              <CardBody className="items-center justify-center">
-                <Image
-                  src="/assets/boostagram-light.png"
-                  className="pointer-events-none block rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:hidden"
-                  fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
-                />
-                <Image
-                  src="/assets/boostagram-dark.png"
-                  className="pointer-events-none hidden rounded-3xl object-cover object-top transition-transform duration-300 group-hover:scale-105 dark:block"
-                  fill={true}
-                  alt="Petchx Panuphong Burakitphachai"
-                />
-              </CardBody>
+              </div>
             </Card>
           </div>
         </motion.div>

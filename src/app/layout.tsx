@@ -6,6 +6,7 @@ import { JetBrains_Mono } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
 import Providers from "./providers";
+import Footer from "./_components/footer";
 
 export const metadata: Metadata = {
   title: "Topone – Full-Stack Developer",
@@ -25,7 +26,10 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en" className={`${font.className}`}>
       <body>
         <TRPCReactProvider>
-          <Providers>{children}</Providers>
+          <Providers>
+            {children}
+            <Footer />
+          </Providers>
         </TRPCReactProvider>
       </body>
     </html>

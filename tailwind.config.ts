@@ -26,6 +26,10 @@ export default {
               DEFAULT: "#905aff",
               foreground: "#000",
             },
+            secondary: {
+              DEFAULT: "#F8F8F8",
+              foreground: "#000",
+            },
           }, // light theme colors
         },
         dark: {
@@ -33,6 +37,10 @@ export default {
           colors: {
             primary: {
               DEFAULT: "#905aff",
+              foreground: "#fff",
+            },
+            secondary: {
+              DEFAULT: "#1F1F22",
               foreground: "#fff",
             },
           }, // light theme colors
