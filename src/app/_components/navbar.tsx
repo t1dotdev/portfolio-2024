@@ -73,15 +73,15 @@ export default function Nav({ index }: { index: string }) {
             Services
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={index === "contact"}>
-          <Link
-            color={index === "contact" ? "primary" : "foreground"}
-            href="/contact"
-            className="cursor-pointer hover:text-primary"
-          >
-            Contact
-          </Link>
-        </NavbarItem>
+        {/* <NavbarItem isActive={index === "contact"}> */}
+        {/*   <Link */}
+        {/*     color={index === "contact" ? "primary" : "foreground"} */}
+        {/*     href="/contact" */}
+        {/*     className="cursor-pointer hover:text-primary" */}
+        {/*   > */}
+        {/*     Contact */}
+        {/*   </Link> */}
+        {/* </NavbarItem> */}
       </NavbarContent>
       <NavbarContent className="gap-2" justify="end">
         <NavbarItem className="">
@@ -143,14 +143,14 @@ export default function Nav({ index }: { index: string }) {
           >
             Projects
           </Link>
-          <Link
-            color={index === "contact" ? "primary" : "foreground"}
-            className="w-full"
-            href="/contact"
-            size="lg"
-          >
-            Contact
-          </Link>
+          {/* <Link */}
+          {/*   color={index === "contact" ? "primary" : "foreground"} */}
+          {/*   className="w-full" */}
+          {/*   href="/contact" */}
+          {/*   size="lg" */}
+          {/* > */}
+          {/*   Contact */}
+          {/* </Link> */}
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
