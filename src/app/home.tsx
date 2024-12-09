@@ -500,7 +500,7 @@ export default function HomePage() {
             <Card className="group h-full rounded-3xl">
               <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/clockin.png"
+                  src="/assets/projects/clockin.png"
                   className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
                   alt="Topone Panuphong Burakitphachai"
@@ -520,7 +520,7 @@ export default function HomePage() {
             <Card className="group h-full rounded-3xl">
               <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/kalayanamit.png"
+                  src="/assets/projects/kalayanamit.png"
                   className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
                   alt="Topone Panuphong Burakitphachai"
@@ -541,7 +541,7 @@ export default function HomePage() {
             <Card className="group h-full rounded-3xl">
               <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/b3loved.png"
+                  src="/assets/projects/b3loved.png"
                   className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
                   alt="Topone Panuphong Burakitphachai"
@@ -561,7 +561,7 @@ export default function HomePage() {
             <Card className="group h-full rounded-3xl">
               <div className="relative h-56 w-full">
                 <Image
-                  src="/assets/boostagram.png"
+                  src="/assets/projects/boostagram.png"
                   className="pointer-events-none block rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105"
                   fill={true}
                   alt="Topone Panuphong Burakitphachai"
