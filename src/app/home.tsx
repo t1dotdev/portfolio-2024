@@ -432,7 +432,7 @@ export default function HomePage() {
                 </div>
 
                 <CardFooter className="flex-col items-start justify-start">
-                  <h1 className="text-xs opacity-50">STAY WITH ME</h1>
+                  <h1 className="text-xs opacity-50">โปรไฟล์</h1>
                   <h1 className="text-xl">Profiles</h1>
                 </CardFooter>
               </CardBody>

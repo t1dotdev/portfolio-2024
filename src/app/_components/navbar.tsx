@@ -32,7 +32,7 @@ export default function Nav({ index }: { index: string }) {
       <NavbarContent>
         <NavbarBrand>
           {/* <Logo /> */}
-          <div className="text-lg font-black">TOPONE.DEV</div>
+          <div className="text-lg font-black">topone</div>
         </NavbarBrand>
       </NavbarContent>
 
