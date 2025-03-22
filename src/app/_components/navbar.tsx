@@ -9,7 +9,6 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
@@ -17,6 +16,7 @@ import { motion } from "framer-motion";
 import { ThemeSwitcher } from "./theme-switcher";
 import Ascii from "./ascii";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { Button } from "~/components/ui/button";
 
 export default function Nav({ index }: { index: string }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -88,29 +88,22 @@ export default function Nav({ index }: { index: string }) {
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem className="flex md:hidden">
-          <Button
-            as={Link}
-            variant="flat"
-            color="primary"
-            href="https://github.com/petchxx"
-            isIconOnly
-          >
-            {/* <TbBrandGithub size={20} /> */}
+          <Link href="https://github.com/petchxx">
+            <Button color="primary">
+              {/* <TbBrandGithub size={20} /> */}
 
-            <Icon icon="line-md:github-loop" fontSize={20} />
-          </Button>
+              <Icon icon="line-md:github-loop" fontSize={20} />
+            </Button>
+          </Link>
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button
-            as={Link}
-            href="https://github.com/t1dotdev"
-            color="primary"
-            variant="flat"
-          >
-            {/* <TbBrandGithub size={20} /> */}
-            <Icon icon="line-md:github-loop" fontSize={20} />
-            <p>T1DOTDEV</p>
-          </Button>
+          <Link href="https://github.com/t1dotdev">
+            <Button color="primary">
+              {/* <TbBrandGithub size={20} /> */}
+              <Icon icon="line-md:github-loop" fontSize={20} />
+              <p>T1DOTDEV</p>
+            </Button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenuToggle

@@ -3,7 +3,9 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { Button, Switch } from "@nextui-org/react";
+import { Switch } from "@nextui-org/react";
+import { Button } from "~/components/ui/button";
+import { Moon, Sun } from "lucide-react";
 
 type Props = {
   size?: "sm" | "md" | "lg";
@@ -65,29 +67,19 @@ export function ThemeSwitcher({ size, isSwitch }: Props) {
         />
       ) : theme == "light" ? (
         <Button
-          isIconOnly
-          size={size ?? "md"}
-          variant="light"
+          variant={"ghost"}
+          size={"icon"}
           onClick={() => setTheme("dark")}
         >
-          <Icon
-            icon="line-md:moon-loop"
-            className="text-foreground"
-            fontSize={24}
-          />
+          <Moon />
         </Button>
       ) : (
         <Button
-          size={size ?? "md"}
-          isIconOnly
-          variant="light"
+          variant={"ghost"}
+          size={"icon"}
           onClick={() => setTheme("light")}
         >
-          <Icon
-            icon="line-md:sun-rising-loop"
-            className="text-foreground"
-            fontSize={24}
-          />
+          <Sun />
         </Button>
       )}
     </div>
